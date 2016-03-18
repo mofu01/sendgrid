@@ -35,11 +35,23 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ApiClient.cs" />
-    <Compile Include="Categories\Categories.cs" />
-    <Compile Include="InvalidEmails\InvalidEmails.cs" />
-    <Compile Include="Mail\Model\EmailAddress.cs" />
-    <Compile Include="Mail\Model\EmailMessage.cs" />
-    <Compile Include="Mail\Model\EmailAddressType.cs" />
+    <Compile Include="Endpoints\Blocks.cs" />
+    <Compile Include="Endpoints\Bounces.cs" />
+    <Compile Include="Endpoints\Categories.cs" />
+    <Compile Include="Endpoints\SpamReports.cs" />
+    <Compile Include="Endpoints\Statistics.cs" />
+    <Compile Include="Models\Statistics\AggregateType.cs" />
+    <Compile Include="Models\Statistics\BasicStatistic.cs" />
+    <Compile Include="Models\Statistics\BasicStatisticTypes.cs" />
+    <Compile Include="Models\Statistics\Metric.cs" />
+    <Compile Include="Models\ResponseEmails\ResponseEmail.cs" />
+    <Compile Include="Models\ResponseEmails\SpamEmail.cs" />
+    <Compile Include="Models\ResponseEmails\SupressedEmail.cs" />
+    <Compile Include="Endpoints\InvalidEmails.cs" />
+    <Compile Include="Models\EmailAddress.cs" />
+    <Compile Include="Models\EmailMessage.cs" />
+    <Compile Include="Models\EmailAddressType.cs" />
+    <Compile Include="Models\ResponseEmails\InvalidEmail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SendGridApi.cs" />
   </ItemGroup>
@@ -65,11 +77,7 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Blocks\" />
-    <Folder Include="Bounces\" />
-    <Folder Include="SpamReports\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">

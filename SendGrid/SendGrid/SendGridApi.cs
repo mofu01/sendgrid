@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using SendGrid.Endpoints;
 
 namespace SendGrid
 {
@@ -18,9 +19,17 @@ namespace SendGrid
         public SendGridApi(string apiKey)
         {
             this.apiClient = new ApiClient(apiKey);
+            this.Bounces = new Bounces(this.apiClient);
+            this.Blocks = new Blocks(this.apiClient);
+            this.InvalidEmails = new InvalidEmails(this.apiClient);
+            this.SpamReports = new SpamReports(this.apiClient);
+            this.Categories = new Categories(this.apiClient);
         }
 
-
-
+        public Bounces Bounces { get; private set; }
+        public Blocks Blocks { get; private set; }
+        public InvalidEmails InvalidEmails { get; private set; }
+        public SpamReports SpamReports { get; private set; }
+        public Categories Categories { get; private set; }
     }
 }

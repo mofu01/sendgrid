@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SendGrid.InvalidEmails
+namespace SendGrid.Models.Statistics
 {
-    class InvalidEmails
+    public enum BasicStatisticTypes
     {
+        Global, Category, Subuser
     }
 }

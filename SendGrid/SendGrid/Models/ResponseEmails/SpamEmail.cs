@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SendGrid.Mail.Model
+namespace SendGrid.Models.ResponseEmails
 {
-    public enum EmailAddressType
+    public class SpamEmail : ResponseEmail
     {
-        TO, CC, BCC
+        public string IpAddress { get; set; }
     }
 }

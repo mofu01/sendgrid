@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SendGrid.Categories
+namespace SendGrid.Endpoints
 {
     public class Categories
     {
@@ -13,7 +13,7 @@ namespace SendGrid.Categories
         private readonly ApiClient client;
 
         /// <summary>
-        /// SendGrid Blocks object.
+        /// SendGrid Categories object.
         /// https://sendgrid.com/docs/API_Reference/Web_API_v3/Categories/categories.html
         /// </summary>
         /// <param name="client">SendGrid Web API v3 client</param>
