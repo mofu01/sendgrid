@@ -33,10 +33,10 @@ namespace SendGrid.Endpoints
         /// <param name="endDate">The end date of the statistics to retrieve. Defaults to today.</param>
         /// <param name="aggregatedBy">How to group the statistics (Day, Week, Month)</param>
         /// <returns></returns>
-        public IDictionary<DateTime, BasicStatistic> GetBasicGlobal(DateTime startDate, DateTime? endDate = null, AggregateType? aggregatedBy = null)
-        {
+        //public IDictionary<DateTime, BasicStatistic> GetBasicGlobal(DateTime startDate, DateTime? endDate = null, AggregateType? aggregatedBy = null)
+        //{
 
-        }
+        //}
 
         /// <summary>
         /// Category Stats provide all of your user’s email statistics for your categories.
@@ -46,10 +46,10 @@ namespace SendGrid.Endpoints
         /// <param name="endDate">The end date of the statistics to retrieve. Defaults to today.</param>
         /// <param name="aggregatedBy">How to group the statistics (Day, Week, Month)</param>
         /// <returns></returns>
-        public IDictionary<DateTime, BasicStatistic> GetBasicFilterdByCategories(DateTime startDate, IEnumerable<string> categories, DateTime? endDate = null, AggregateType? aggregatedBy = null)
-        {
+        //public IDictionary<DateTime, BasicStatistic> GetBasicFilterdByCategories(DateTime startDate, IEnumerable<string> categories, DateTime? endDate = null, AggregateType? aggregatedBy = null)
+        //{
 
-        }
+        //}
 
         /// <summary>
         /// Subuser Stats provide all of your user’s email statistics for your subuser accounts.
@@ -59,9 +59,9 @@ namespace SendGrid.Endpoints
         /// <param name="endDate">The end date of the statistics to retrieve. Defaults to today.</param>
         /// <param name="aggregatedBy">How to group the statistics (Day, Week, Month)</param>
         /// <returns></returns>
-        public IDictionary<DateTime, BasicStatistic> GetBasicFilterdBySubUsers(DateTime startDate, IEnumerable<string> subUsers, DateTime? endDate = null, AggregateType? aggregatedBy = null)
-        {
+        //public IDictionary<DateTime, BasicStatistic> GetBasicFilterdBySubUsers(DateTime startDate, IEnumerable<string> subUsers, DateTime? endDate = null, AggregateType? aggregatedBy = null)
+        //{
 
-        }
+        //}
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
 using SendGrid.Models.ResponseEmails;
 
 namespace SendGrid.Endpoints
@@ -22,29 +23,42 @@ namespace SendGrid.Endpoints
             this.client = client;
         }
 
-        public Task<IEnumerable<InvalidEmail>> GetListAsync(DateTime? startTime = null, DateTime? EndTime = null, int? limit = null, int? offset = null)
-        {
+        //public Task<IEnumerable<InvalidEmail>> GetListAsync(DateTime? startTime = null, DateTime? EndTime = null, int? limit = null, int? offset = null)
+        //{
 
+        //}
+
+        //public Task<InvalidEmail> GetAsync(string email)
+        //{
+
+        //}
+
+        public async Task<bool> DeleteAllAsync()
+        {
+            var response = await this.client.Delete(this.endpoint, new JObject(new { delete_all = true }));
+            return response.IsSuccessStatusCode;
         }
 
-        public Task<InvalidEmail> GetAsync(string email)
+        public async Task<bool> DeleteListAsync(IEnumerable<string> emails)
         {
+            if (emails == null || !emails.Any())
+            {
+                throw new ArgumentException("emails");
+            }
 
+            var response = await this.client.Delete(this.endpoint, new JObject(emails));
+            return response.IsSuccessStatusCode;
         }
 
-        public Task<bool> DeleteAllAsync()
+        public async Task<bool> DeleteAsync(string email)
         {
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                throw new ArgumentException("email");
+            }
 
-        }
-
-        public Task<bool> DeleteListAsync(IEnumerable<string> emails)
-        {
-
-        }
-
-        public Task<bool> DeleteAsync(string email)
-        {
-
+            var response = await this.client.Delete(this.endpoint + "/" + email);
+            return response.IsSuccessStatusCode;
         }
     }
 }

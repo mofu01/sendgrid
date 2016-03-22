@@ -22,36 +22,38 @@ namespace SendGrid.Endpoints
             this.client = client;
         }
 
-        public async Task<IEnumerable<string>> GetAsync(string query, int limit = 50, int offset = 0)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="category"></param>
+        /// <param name="limit"></param>
+        /// <param name="offset"></param>
+        /// <returns></returns>
+        public async Task<IEnumerable<string>> GetAsync(string category, int? limit = null, int? offset = null)
         {
-            var query = HttpUtility.ParseQueryString(string.Empty);
-
-            if (startTime.HasValue)
+            if (string.IsNullOrWhiteSpace(category))
             {
-                query["start_time"] = startTime.Value.Ticks.ToString();
+                throw new ArgumentNullException(category);
             }
 
-            if (endTime.HasValue)
+            var queryString = new StringBuilder();
+            queryString.Append(this.endpoint);
+            queryString.AppendFormat("?category={0}", category);
+
+            if (limit.HasValue)
             {
-                query["end_time"] = endTime.Value.Ticks.ToString();
+                queryString.AppendFormat("&limit={1}", limit);
             }
 
-            if (limit.HasValue && limit.Value >= 0)
+            if (offset.HasValue)
             {
-                query["limit"] = limit.ToString();
+                queryString.AppendFormat("&offset={1}", limit);
             }
 
-            if (offset.HasValue && offset.Value >= 0)
-            {
-                query["offset"] = offset.ToString();
-            }
+            var response = await this.client.Get(queryString.ToString());
+            var responseContent = await response.Content.ReadAsStringAsync();
 
-            var response = query.Keys.Count > 0 ?
-                    await this.client.Get(this.endpoint + "?" + query) :
-                    await this.client.Get(this.endpoint);
-
-            var categories = await response.Content.ReadAsAsync<IEnumerable<KeyValuePair<string, string>>>();
-            return categories.Select(c => c.Value);
+            return new List<string>();
         }
     }
 }

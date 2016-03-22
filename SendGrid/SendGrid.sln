@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendGrid", "SendGrid\SendGrid.csproj", "{D0F7E7B1-CA8E-4D48-8E3C-4647973F3B52}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendGrid.TestConsole", "SendGrid.TestConsole\SendGrid.TestConsole.csproj", "{10BAFBCC-7F05-4C05-84E8-2896BBDFE4AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendGrid.Test", "SendGrid.Test\SendGrid.Test.csproj", "{72635B1F-6868-4397-804F-BDFE3EDAEC09}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{D0F7E7B1-CA8E-4D48-8E3C-4647973F3B52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0F7E7B1-CA8E-4D48-8E3C-4647973F3B52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0F7E7B1-CA8E-4D48-8E3C-4647973F3B52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10BAFBCC-7F05-4C05-84E8-2896BBDFE4AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10BAFBCC-7F05-4C05-84E8-2896BBDFE4AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10BAFBCC-7F05-4C05-84E8-2896BBDFE4AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10BAFBCC-7F05-4C05-84E8-2896BBDFE4AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72635B1F-6868-4397-804F-BDFE3EDAEC09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72635B1F-6868-4397-804F-BDFE3EDAEC09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72635B1F-6868-4397-804F-BDFE3EDAEC09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72635B1F-6868-4397-804F-BDFE3EDAEC09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
